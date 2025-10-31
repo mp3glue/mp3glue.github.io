@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>MP3 Glue</title>
+  <script src="tailwindcss.min.js"></script>
+  <link rel='shortcut icon' href='mp3glue-app-icon.png' type='image/x-icon' />
+</head>
+<body class="bg-gray-50 min-h-screen p-6">
+ 
+ 
+  <div class="max-w-3xl mx-auto">
+ 
+ 
+    <div class="flex justify-between items-center mb-7">
+
+      <img class="w-24 h-24" src="mp3glue-app-icon.png" alt="MP3 Glue">
+
+      <button id="clearBtn" class="bg-red-600 text-white px-8 py-2 rounded-lg hover:bg-red-700 transition">Clear All</button>
+    </div>
+
+
+
+
+    <div id="dropzone" class="border-4 border-dashed border-blue-400 bg-white text-center p-10 rounded-lg cursor-pointer mb-6">
+      
+      <p class="mb-1"><span class="font-bold">Drop a folder/directory</span> here (or individual MP3 files). 
+      </p>
+      
+      <p>Alternatively, click to upload a <span class="font-bold">folder/directory.</span></p>
+
+      <!-- hidden from UI but operational -->
+      <input
+        type="file"
+        id="fileInput"
+        multiple
+        webkitdirectory
+        directory
+        accept="audio/mpeg"
+        class="hidden"
+      /></div>
+
+
+
+
+    <div class="flex justify-center">
+      <button id="combineBtn" class="mb-6 mr-0 bg-amber-500 text-white px-6 py-3 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed hover:bg-amber-400 disabled:hover:bg-amber-500" disabled>Combine all files</button>
+    </div>
+
+
+
+
+    <!-- mp3 track list displayed-->
+    <div id="audioList" class="space-y-8"></div>
+
+    <!--  -->
+    <!--  -->
+  </div>
+
+
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
