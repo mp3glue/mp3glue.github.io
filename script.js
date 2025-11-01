@@ -273,7 +273,9 @@ combineBtn.addEventListener('click', async () => {
     const wavBlob = encodeWAV(finalBuffer);
     const wavUrl = URL.createObjectURL(wavBlob);
 
-    const timestampBlob = new Blob([timestamps.join('\n')], { type: 'text/plain' });
+    const header = "Tracklist with Timestamps:\n\n";
+    const timestampBlob = new Blob([header + timestamps.join('\n')], { type: 'text/plain' });
+
     const timestampUrl = URL.createObjectURL(timestampBlob);
 
     status.textContent = 'Done! Compiled audio is ready.';
